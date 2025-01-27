@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <div className="h-screen overflow-hidden flex flex-col relative">
       <div className="absolute left-16 bottom-0 flex flex-col gap-6 items-center">
-        <img src="/assets/linkedin.png" className="h-8 w-8"/>
-        <img src="/assets/github.png" className="h-8 w-8"/>
-        <img src="/assets/email.png" className="h-8 w-8"/>
+        <Image alt="linkedin" src="/assets/linkedin.png" className="h-8 w-8"/>
+        <Image alt="github" src="/assets/github.png" className="h-8 w-8"/>
+        <Image alt="email" src="/assets/email.png" className="h-8 w-8"/>
         <div className="w-1 h-56 bg-white rounded-full"></div>
       </div>
       <div className="absolute right-16 bottom-0 flex flex-col gap-6 items-center translate-x-16 hover:scale-110 transition-all cursor-pointer">
@@ -26,7 +26,7 @@ export default function Home() {
         <div className="flex flex-col items-start justify-center">
           <div>
             <p className="text-[24px] font-semibold">Hi There</p>
-            <h1 className="text-[68px] font-bold">I'm <span className="text-[#f13c58]">Sagar Shetty</span></h1>
+            <h1 className="text-[68px] font-bold">I&apos;m <span className="text-[#f13c58]">Sagar Shetty</span></h1>
             <h2 className="text-[48px]">I am a Web Developer</h2>
           </div>
           <div className="flex items-center gap-12 py-12">
@@ -58,7 +58,7 @@ export default function Home() {
               stroke="url(#sw-gradient)"
             />
           </svg>
-          <img src="/assets/person-illustration.png" alt="person" className="w-[80%] object-cover opacity-90" />
+          <image alt="person illustration" src="/assets/person-illustration.png" className="w-[80%] object-cover opacity-90" />
         </div>
       </section>
     </div>
