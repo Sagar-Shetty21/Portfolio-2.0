@@ -68,7 +68,7 @@ const HomeSection = ({scrollYProgress}:{scrollYProgress: MotionValue<number>}) =
   return (
     <motion.section id="home" style={{scale, rotate}} className="bg-[#20345b] sticky top-0 flex flex-col-reverse justify-center gap-10 md:gap-0 md:grid md:grid-cols-2 h-screen md:px-[15%] pt-10 overflow-hidden">
       <div className="flex flex-col items-start justify-center">
-        <div className="p-4 md:p-0 text-center w-full md:text-center">
+        <div className="p-4 md:p-0 text-center md:text-start w-full md:text-center">
           <p className="text-[16px] md:text-[24px] font-semibold">Hi There</p>
           <h1 className="text-[34px] md:text-[68px] font-bold">I&apos;m <span className="text-[#f13c58]">Sagar Shetty</span></h1>
           <h2 className="text-[26px] md:text-[48px]">I am a Web Developer</h2>
