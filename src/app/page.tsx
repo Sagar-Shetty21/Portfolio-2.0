@@ -19,7 +19,7 @@ export default function Home() {
           <div className="cursor-pointer">Home</div>
           <div className="cursor-pointer">About</div>
           <div className="cursor-pointer">Portfolio</div>
-          <button className="px-6 py-1 border-2 bg-[#536c89]">Let's Talk</button>
+          <button className="px-6 py-1 border-2 bg-[#536c89]">Let&apos;s Talk</button>
         </div>
       </section>
       <section className="grid grid-cols-2 flex-grow md:px-[15%]">
