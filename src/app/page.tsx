@@ -1,25 +1,26 @@
-import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="h-screen overflow-hidden flex flex-col relative">
       <div className="absolute left-16 bottom-0 flex flex-col gap-6 items-center">
-        <Image alt="linkedin" src="/assets/linkedin.png" className="h-8 w-8"/>
-        <Image alt="github" src="/assets/github.png" className="h-8 w-8"/>
-        <Image alt="email" src="/assets/email.png" className="h-8 w-8"/>
+        <a href="https://linkedin.com/in/sagarshetty21" target="_blank"><img alt="linkedin" src="/assets/linkedin.png" className="h-8 w-8"/></a>
+        <a href="https://github.com/Sagar-Shetty21" target="_blank"><img alt="github" src="/assets/github.png" className="h-8 w-8"/></a>
+        <a href="mailto:dev.sagarshetty@gmail.com" target="_blank"><img alt="email" src="/assets/email.png" className="h-8 w-8"/></a>
         <div className="w-1 h-56 bg-white rounded-full"></div>
       </div>
-      <div className="absolute right-16 bottom-0 flex flex-col gap-6 items-center translate-x-16 hover:scale-110 transition-all cursor-pointer">
-        <div className="rotate-90 -translate-y-24">dev.sagarshetty@gmail.com</div>
-        <div className="w-1 h-80 bg-white rounded-full"></div>
-      </div>
+      <a href="mailto:dev.sagarshetty@gmail.com" target="_blank">
+        <div className="absolute right-16 bottom-0 flex flex-col gap-6 items-center translate-x-16 hover:scale-110 transition-all cursor-pointer">
+          <div className="rotate-90 -translate-y-24">dev.sagarshetty@gmail.com</div>
+          <div className="w-1 h-80 bg-white rounded-full"></div>
+        </div>
+      </a>
       <section className="md:px-[15%] py-8 flex items-center justify-between">
         <div className="font-bold text-2xl "><span>{"<"}</span><span className="text-[#f13c58]">{"Sagar"}</span><span>{"/>"}</span></div>
         <div className="flex text-lg items-center gap-20 font-semibold">
           <div className="cursor-pointer">Home</div>
           <div className="cursor-pointer">About</div>
           <div className="cursor-pointer">Portfolio</div>
-          <button className="px-6 py-1 border-2 bg-[#536c89]">Let&apos;s Talk</button>
+          <a href="mailto:dev.sagarshetty@gmail.com" target="_blank"><button className="px-6 py-1 border-2 bg-[#536c89]">Let&apos;s Talk</button></a>
         </div>
       </section>
       <section className="grid grid-cols-2 flex-grow md:px-[15%]">
@@ -30,8 +31,8 @@ export default function Home() {
             <h2 className="text-[48px]">I am a Web Developer</h2>
           </div>
           <div className="flex items-center gap-12 py-12">
-            <button className="px-12 py-3 text-2xl font-semibold bg-[#f13c58] rounded-lg">Resume</button>
-            <button className="px-12 py-3 text-2xl font-semibold bg-[#52648c] rounded-lg">Contact Me</button>
+            <a href='/assets/resume.pdf'><button className="px-12 py-3 text-2xl font-semibold bg-[#f13c58] rounded-lg">Resume</button></a>
+            <a href="mailto:dev.sagarshetty@gmail.com" target="_blank"><button className="px-12 py-3 text-2xl font-semibold bg-[#52648c] rounded-lg">Contact Me</button></a>
           </div>
         </div>
         <div className="flex items-center justify-center relative">
@@ -58,7 +59,7 @@ export default function Home() {
               stroke="url(#sw-gradient)"
             />
           </svg>
-          <Image alt="person illustration" src="/assets/person-illustration.png" className="w-[80%] object-cover opacity-90" />
+          <img alt="person illustration" src="/assets/person-illustration.png" className="w-[80%] object-cover opacity-90" />
         </div>
       </section>
     </div>
