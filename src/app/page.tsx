@@ -58,7 +58,7 @@ export default function Home() {
               stroke="url(#sw-gradient)"
             />
           </svg>
-          <image alt="person illustration" src="/assets/person-illustration.png" className="w-[80%] object-cover opacity-90" />
+          <Image alt="person illustration" src="/assets/person-illustration.png" className="w-[80%] object-cover opacity-90" />
         </div>
       </section>
     </div>
