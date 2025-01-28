@@ -1,6 +1,6 @@
 'use client'
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
 
