@@ -29,7 +29,7 @@ body {
 
 .mobileNavbarSection {
   --col-orange: #d17842;
-  --col-dark: #12274d;
+  --col-dark: #040F16;
   --col-darkGray: #52555a;
   --col-gray: #aeaeae;
 
@@ -85,4 +85,85 @@ body {
   width: 100%;
   left: 0;
   top: 25px;
+}
+
+
+/* Github Button */
+.github-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.github-button .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.github-button svg path {
+  transition: 400ms;
+}
+
+/* .github-button:hover {
+  background-color: transparent;
+}
+
+.github-button:hover .text {
+  color: #181717;
+}
+
+.github-button:hover svg path {
+  fill: #181717;
+} */
+
+
+
+/* Custom scrollbar */
+*::-webkit-scrollbar {
+  width: 0em;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+*::-moz-scrollbar {
+  width: 0em;
+}
+
+*::-moz-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #6b7280 #d1d5db;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 10px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background-color: #1f2937;
 }
