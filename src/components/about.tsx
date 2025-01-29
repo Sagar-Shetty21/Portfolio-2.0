@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { useTransform, motion, MotionValue } from "framer-motion";
 import { EXPERIENCE_LIST, SKILLS_LIST } from '@/utils/data';
 
@@ -19,7 +19,7 @@ const AboutSection = ({scrollYProgress}:{scrollYProgress: MotionValue<number>}) 
                         About Me
                     </h2>
                     <p className="text-sm md:text-xl leading-relaxed mb-8 text-slate-100">
-                        I'm a passionate full-stack developer out of Bengaluru with expertise in modern web technologies. 
+                        I&apos;m a passionate full-stack developer out of Bengaluru with expertise in modern web technologies. 
                         With 15+ months of professional experience, I specialize in creating beautiful, responsive, 
                         and user-friendly applications. My toolkit includes React, Node.js, Python, 
                         and cloud technologies, which I use to transform complex problems into 
