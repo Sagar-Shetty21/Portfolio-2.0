@@ -3,116 +3,114 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #1f1f1f;
+    --background: #ffffff;
+    --foreground: #1f1f1f;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1f1f1f;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #1f1f1f;
+        --foreground: #ededed;
+    }
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
 }
-
 
 /* MOBILE NAVBAR */
 
 .mobileNavbarSection {
-  --col-orange: #d17842;
-  --col-dark: #040F16;
-  --col-darkGray: #52555a;
-  --col-gray: #aeaeae;
+    --col-orange: #d17842;
+    --col-dark: #040f16;
+    --col-darkGray: #52555a;
+    --col-gray: #aeaeae;
 
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: var(--col-dark);
-  border-radius: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--col-dark);
+    border-radius: 30px;
 }
 .label {
-  padding: 14px 26px;
-  transition: all 200ms;
-  display: inline-block;
+    padding: 14px 26px;
+    transition: all 200ms;
+    display: inline-block;
 }
 
 .label input[type="radio"] {
-  display: none;
+    display: none;
 }
 .label > svg {
-  transition: all 200ms;
-  fill: var(--col-gray);
-  width: 24px;
+    transition: all 200ms;
+    fill: var(--col-gray);
+    width: 24px;
 }
 .label:hover:not(:has(input:checked)) > svg {
-  fill: #d17842;
-  opacity: 0.6;
+    fill: #d17842;
+    opacity: 0.6;
 }
 .label::before {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  border-radius: 5px;
-  position: relative;
-  left: 50%;
-  top: 20px;
-  background: var(--col-orange);
-  transition: all 200ms;
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    top: 20px;
+    background: var(--col-orange);
+    transition: all 200ms;
 }
 .label > svg {
-  transition: 300ms;
-  fill: var(--col-darkGray);
-  margin-top: 0;
+    transition: 300ms;
+    fill: var(--col-darkGray);
+    margin-top: 0;
 }
 .label:has(input:checked) > svg {
-  fill: var(--col-orange);
-  scale: 1.2;
-  margin-top: -5px;
+    fill: var(--col-orange);
+    scale: 1.2;
+    margin-top: -5px;
 }
 
 .label:has(input:checked)::before {
-  width: 100%;
-  left: 0;
-  top: 25px;
+    width: 100%;
+    left: 0;
+    top: 25px;
 }
-
 
 /* Github Button */
 .github-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 15px;
-  gap: 15px;
-  background-color: #181717;
-  outline: 3px #181717 solid;
-  outline-offset: -3px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: 400ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
 }
 
 .github-button .text {
-  color: white;
-  font-weight: 700;
-  font-size: 1em;
-  transition: 400ms;
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
 }
 
 .github-button svg path {
-  transition: 400ms;
+    transition: 400ms;
 }
 
 /* .github-button:hover {
@@ -127,43 +125,41 @@ body {
   fill: #181717;
 } */
 
-
-
 /* Custom scrollbar */
 *::-webkit-scrollbar {
-  width: 0em;
+    width: 0em;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 * {
-  scrollbar-width: none;
+    scrollbar-width: none;
 }
 
 *::-moz-scrollbar {
-  width: 0em;
+    width: 0em;
 }
 
 *::-moz-scrollbar-thumb {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .thin-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #6b7280 #d1d5db;
+    scrollbar-width: thin;
+    scrollbar-color: #6b7280 #d1d5db;
 }
 
 .thin-scrollbar::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 .thin-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #4b5563;
-  border-radius: 10px;
+    background-color: #4b5563;
+    border-radius: 10px;
 }
 
 .thin-scrollbar::-webkit-scrollbar-track {
-  background-color: #1f2937;
+    background-color: #1f2937;
 }
