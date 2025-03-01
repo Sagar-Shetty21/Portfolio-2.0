@@ -1,6 +1,49 @@
 export const PROJECTS_LIST = [
     {
         id: 1,
+        title: "MotionCraft",
+        description: "Personal Project",
+        techStack: [
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "Framer Motion",
+            "GSAP",
+        ],
+        date: "2025",
+        link: "https://motioncraftdemo.vercel.app/",
+        source: "",
+        placeholderImage: "motioncraft.png",
+        points: [
+            {
+                title: "React",
+                subTitle:
+                    "Developed a dynamic front-end using React, enabling a responsive and interactive user experience.",
+            },
+            {
+                title: "Next.js",
+                subTitle:
+                    "Utilized Next.js for server-side rendering and static site generation, improving performance and SEO.",
+            },
+            {
+                title: "Tailwind CSS",
+                subTitle:
+                    "Designed a responsive and visually appealing UI using Tailwind CSS, ensuring consistency and maintainability.",
+            },
+            {
+                title: "Framer Motion",
+                subTitle:
+                    "Implemented Framer Motion for smooth animations and transitions, enhancing the user experience.",
+            },
+            {
+                title: "GSAP",
+                subTitle:
+                    "Utilized GSAP for advanced animations and effects, creating a visually engaging website.",
+            },
+        ],
+    },
+    {
+        id: 2,
         title: "Ecommerce Website",
         description: "Client Project",
         techStack: [
@@ -43,7 +86,7 @@ export const PROJECTS_LIST = [
         ],
     },
     {
-        id: 2,
+        id: 3,
         title: "lol.js NPM Package",
         description: "Because the world definitely needed another JS library.",
         techStack: [
@@ -73,7 +116,7 @@ export const PROJECTS_LIST = [
         ],
     },
     {
-        id: 3,
+        id: 4,
         title: "College Application",
         description: "Academic Project",
         techStack: [
@@ -117,7 +160,7 @@ export const PROJECTS_LIST = [
         ],
     },
     {
-        id: 4,
+        id: 5,
         title: "React Chatbot",
         description: "Personal Project",
         techStack: ["React", "Node.js", "Express.js", "OpenAI API"],
