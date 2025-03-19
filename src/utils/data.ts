@@ -12,7 +12,7 @@ export const PROJECTS_LIST = [
         ],
         date: "2025",
         link: "https://motioncraftdemo.vercel.app/",
-        source: "",
+        source: "private",
         placeholderImage: "motioncraft.png",
         points: [
             {

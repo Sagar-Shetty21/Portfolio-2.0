@@ -167,33 +167,92 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                     </button>
                                 ))}
                             </div>
-                            <div className="flex-grow flex items-end justify-center md:justify-end p-2">
-                                <a
-                                    href={project.source}
-                                    target="_blank"
-                                    className="
-                                    flex items-center justify-center px-2 md:px-4 py-2 gap-2 md:gap-4 
-                                    bg-[#181717] outline outline-[3px] outline-[#181717] outline-offset-[-3px] 
-                                    rounded-md border-none cursor-pointer transition-all duration-400 text-sm hover:scale-110
-                                "
-                                >
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
+                            {project.source === "private" ? (
+                                <div className="flex-grow flex items-end justify-center md:justify-end p-2">
+                                    <div
+                                        className="
+                                            flex items-center justify-center px-2 md:px-4 py-2 gap-2 md:gap-4 
+                                            bg-[#4A4A4A] outline outline-[3px] outline-[#4A4A4A] outline-offset-[-3px] 
+                                            rounded-md border-none cursor-not-allowed transition-all duration-400 text-sm
+                                        "
                                     >
-                                        <path
-                                            d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
-                                            fill="white"
-                                        ></path>
-                                    </svg>
-                                    <p className="text text-white">
-                                        Source Code
-                                    </p>
-                                </a>
-                            </div>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6 10V8C6 4.69 7 2 12 2C17 2 18 4.69 18 8V10"
+                                                stroke="white"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                            <path
+                                                d="M17 22H7C3 22 2 21 2 17V15C2 11 3 10 7 10H17C21 10 22 11 22 15V17C22 21 21 22 17 22Z"
+                                                stroke="white"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                            <path
+                                                d="M15.9965 16H16.0054"
+                                                stroke="white"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                            <path
+                                                d="M11.9955 16H12.0045"
+                                                stroke="white"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                            <path
+                                                d="M7.99451 16H8.00349"
+                                                stroke="white"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+                                        <p className="text text-white">
+                                            Private Repo
+                                        </p>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex-grow flex items-end justify-center md:justify-end p-2">
+                                    <a
+                                        href={project.source}
+                                        target="_blank"
+                                        className="
+                                        flex items-center justify-center px-2 md:px-4 py-2 gap-2 md:gap-4 
+                                        bg-[#181717] outline outline-[3px] outline-[#181717] outline-offset-[-3px] 
+                                        rounded-md border-none cursor-pointer transition-all duration-400 text-sm hover:scale-110
+                                    "
+                                    >
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
+                                                fill="white"
+                                            ></path>
+                                        </svg>
+                                        <p className="text text-white">
+                                            Source Code
+                                        </p>
+                                    </a>
+                                </div>
+                            )}
                         </div>
                     </motion.div>
                 );
