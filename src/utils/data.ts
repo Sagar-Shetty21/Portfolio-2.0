@@ -1,6 +1,148 @@
 export const PROJECTS_LIST = [
     {
-        id: 1,
+        id: 7,
+        title: "LogPulse",
+        description: "Personal Project",
+        techStack: [
+            "React",
+            "Next.js",
+            "BullMQ",
+            "Redis",
+            "Docker",
+            "Supabase",
+            "Tailwind CSS",
+        ],
+        date: "OnGoing",
+        link: "https://logpulse.up.railway.app/",
+        source: "https://github.com/Sagar-Shetty21/LogPulse",
+        placeholderImage: "logpulse.png",
+        points: [
+            {
+                title: "Log File Upload & Processing",
+                subTitle:
+                    "Seamlessly upload log files through a user-friendly interface powered by React and Next.js. Files are processed asynchronously by BullMQ queues for optimal performance.",
+            },
+            {
+                title: "Real-time Processing Status",
+                subTitle:
+                    "Track log processing status in real-time with Redis-backed job monitoring that provides visibility into queue progress and completion status.",
+            },
+            {
+                title: "Advanced Log Parsing",
+                subTitle:
+                    "Intelligent parsing system identifies patterns across different log formats, extracting meaningful data points for analysis without manual configuration.",
+            },
+            {
+                title: "Structured Data Storage",
+                subTitle:
+                    "Processed logs are automatically transformed and stored in Supabase databases using optimized schemas for quick retrieval and analysis.",
+            },
+            {
+                title: "Interactive Dashboards",
+                subTitle:
+                    "Visualize log data through customizable dashboards built with React components and styled with Tailwind CSS for a responsive experience.",
+            },
+            {
+                title: "Trend Analysis",
+                subTitle:
+                    "Identify patterns and anomalies in your log data with built-in trend analysis tools that highlight potential issues before they become problems.",
+            },
+            {
+                title: "Error Tracking",
+                subTitle:
+                    "Automatically categorize and prioritize errors found in logs, with frequency analysis and impact assessment capabilities.",
+            },
+            {
+                title: "Performance Monitoring",
+                subTitle:
+                    "Track system performance metrics extracted from logs to identify bottlenecks and optimization opportunities in your applications.",
+            },
+            {
+                title: "Containerized Deployment",
+                subTitle:
+                    "Deploy LogPulse anywhere with Docker containerization, ensuring consistent operation across development, staging, and production environments.",
+            },
+            {
+                title: "Scalable Architecture",
+                subTitle:
+                    "Handle varying workloads with a scalable architecture built on Next.js APIs, BullMQ workers, and Redis for efficient distributed processing.",
+            },
+            {
+                title: "User Authentication",
+                subTitle:
+                    "Secure access to logs and analytics with Supabase authentication, ensuring only authorized personnel can view sensitive operational data.",
+            },
+            {
+                title: "Export Capabilities",
+                subTitle:
+                    "Generate reports and export processed log data in multiple formats for sharing with stakeholders or integrating with other systems.",
+            },
+        ],
+    },
+    {
+        id: 6,
+        title: "PickNBuild",
+        description: "Personal Project",
+        techStack: ["React", "Next.js", "MongoDB", "Tailwind CSS"],
+        date: "2025",
+        link: "https://pick-n-build.vercel.app/",
+        source: "https://github.com/Sagar-Shetty21/PickNBuild",
+        placeholderImage: "picknbuild.png",
+        points: [
+            {
+                title: "Instant Website Creation",
+                subTitle:
+                    "Choose from a curated collection of professional Tailwind CSS templates and export ready-to-use HTML files in seconds",
+            },
+            {
+                title: "No Coding Required",
+                subTitle:
+                    "Simply select a template, customize variables, and download your personalized webpage without writing a single line of code",
+            },
+            {
+                title: "Community-Driven Library",
+                subTitle:
+                    "Access an ever-growing collection of templates created by designers and developers from around the world",
+            },
+            {
+                title: "Contribute Your Designs",
+                subTitle:
+                    "Share your creativity by building and submitting your own templates with our interactive Monaco editor featuring live preview",
+            },
+            {
+                title: "Variable Templating",
+                subTitle:
+                    "Create flexible templates with customizable variables that users can easily modify to match their brand and content needs",
+            },
+            {
+                title: "Modern Tech Stack",
+                subTitle:
+                    "Built with React, Next.js, MongoDB, and Tailwind CSS for a seamless, responsive, and powerful user experience",
+            },
+            {
+                title: "Live Preview Editor",
+                subTitle:
+                    "See changes in real-time as you customize templates or create new ones with our advanced Monaco-powered editor",
+            },
+            {
+                title: "Export & Deploy Anywhere",
+                subTitle:
+                    "Get clean, optimized HTML files that can be hosted on any web server or static site hosting platform",
+            },
+            {
+                title: "Zero Dependencies",
+                subTitle:
+                    "Exported templates include everything needed in a single HTML file with no external dependencies or build steps",
+            },
+            {
+                title: "Open Source Community",
+                subTitle:
+                    "Join a vibrant ecosystem of creators contributing to and benefiting from shared web design resources",
+            },
+        ],
+    },
+    {
+        id: 5,
         title: "MotionCraft",
         description: "Personal Project",
         techStack: [
@@ -16,34 +158,84 @@ export const PROJECTS_LIST = [
         placeholderImage: "motioncraft.png",
         points: [
             {
-                title: "React",
+                title: "Visual Animation Builder",
                 subTitle:
-                    "Developed a dynamic front-end using React, enabling a responsive and interactive user experience.",
+                    "Create complex CSS keyframe animations with an intuitive visual timeline editor instead of writing code manually",
             },
             {
-                title: "Next.js",
+                title: "Real-time Preview",
                 subTitle:
-                    "Utilized Next.js for server-side rendering and static site generation, improving performance and SEO.",
+                    "See your animations instantly as you build them with live visual feedback and interactive controls",
             },
             {
-                title: "Tailwind CSS",
+                title: "Code Export",
                 subTitle:
-                    "Designed a responsive and visually appealing UI using Tailwind CSS, ensuring consistency and maintainability.",
+                    "Export production-ready CSS keyframe animations that work in any modern web project",
             },
             {
-                title: "Framer Motion",
+                title: "Timeline Controls",
                 subTitle:
-                    "Implemented Framer Motion for smooth animations and transitions, enhancing the user experience.",
+                    "Fine-tune animations with precise timeline controls for timing, easing, and keyframe positioning",
             },
             {
-                title: "GSAP",
+                title: "Animation Library",
                 subTitle:
-                    "Utilized GSAP for advanced animations and effects, creating a visually engaging website.",
+                    "Access a growing collection of pre-built animations to use as starting points or inspiration",
+            },
+            {
+                title: "Cross-Browser Compatible",
+                subTitle:
+                    "Generated animations work seamlessly across all major browsers and devices",
+            },
+            {
+                title: "No Coding Required",
+                subTitle:
+                    "Create professional animations without writing a single line of CSS code",
+            },
+            {
+                title: "Modern Tech Stack",
+                subTitle:
+                    "Built with React, Next.js, Tailwind CSS, Framer Motion, and GSAP for superior performance and reliability",
+            },
+            {
+                title: "Custom Easing Controls",
+                subTitle:
+                    "Apply and visualize different easing functions to create natural, polished motion",
+            },
+            {
+                title: "Multi-element Animations",
+                subTitle:
+                    "Orchestrate complex animations across multiple elements with synchronized timelines",
+            },
+            {
+                title: "Responsive Animation Testing",
+                subTitle:
+                    "Preview how your animations behave across different screen sizes before implementation",
+            },
+            {
+                title: "Version History",
+                subTitle:
+                    "Save animation states and revert to previous versions without losing your work",
+            },
+            {
+                title: "Animation Inspector",
+                subTitle:
+                    "Analyze and modify individual properties with detailed inspection tools",
+            },
+            {
+                title: "Collaborative Workspace",
+                subTitle:
+                    "Share and collaborate on animations with team members in real-time",
+            },
+            {
+                title: "Performance Optimization",
+                subTitle:
+                    "Get suggestions for improving animation performance and reducing browser load",
             },
         ],
     },
     {
-        id: 2,
+        id: 4,
         title: "Ecommerce Website",
         description: "Client Project",
         techStack: [
@@ -116,7 +308,7 @@ export const PROJECTS_LIST = [
         ],
     },
     {
-        id: 4,
+        id: 2,
         title: "College Application",
         description: "Academic Project",
         techStack: [
@@ -160,7 +352,7 @@ export const PROJECTS_LIST = [
         ],
     },
     {
-        id: 5,
+        id: 1,
         title: "React Chatbot",
         description: "Personal Project",
         techStack: ["React", "Node.js", "Express.js", "OpenAI API"],
