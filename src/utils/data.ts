@@ -13,7 +13,7 @@ export const PROJECTS_LIST = [
             "Tailwind CSS",
         ],
         date: "OnGoing",
-        link: "https://logpulse.up.railway.app/",
+        link: "https://log-pulse.vercel.app/",
         source: "https://github.com/Sagar-Shetty21/LogPulse",
         placeholderImage: "logpulse.png",
         points: [
