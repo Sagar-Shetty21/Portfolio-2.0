@@ -1,5 +1,52 @@
 export const PROJECTS_LIST = [
     {
+        id: 8,
+        title: "RivalTrack",
+        description: "Personal Project",
+        techStack: ["Svelte", "Firebase", "TypeScript", "Tailwind CSS"],
+        date: "OnGoing",
+        link: "https://rivaltrack.vercel.app/",
+        source: "https://github.com/Sagar-Shetty21/Rival-Track",
+        placeholderImage: "rivaltrack.png",
+        points: [
+            {
+                title: "Real-Time Score Tracking",
+                subTitle:
+                    "Track live scores of sports games with instant updates using Firebase's real-time database and Svelte's reactive UI.",
+            },
+            {
+                title: "Multi-Game Support",
+                subTitle:
+                    "Easily manage multiple games simultaneously, each with its own scoreboard, players, and match settings.",
+            },
+            {
+                title: "Customizable Match Settings",
+                subTitle:
+                    "Supports flexible match configurations including team names, number of rounds, and custom point systems.",
+            },
+            {
+                title: "Persistent Game History",
+                subTitle:
+                    "All completed matches are saved in Firebase Firestore, enabling users to revisit and analyze past games.",
+            },
+            {
+                title: "Intuitive User Experience",
+                subTitle:
+                    "Designed with Svelte and Tailwind CSS for a sleek, fast, and mobile-friendly interface focused on usability.",
+            },
+            {
+                title: "Offline Support",
+                subTitle:
+                    "Firebase’s offline capabilities allow users to continue tracking scores even without a stable internet connection.",
+            },
+            {
+                title: "Secure and Scalable Backend",
+                subTitle:
+                    "Firebase Authentication ensures secure user access, while its serverless infrastructure scales effortlessly with usage.",
+            },
+        ],
+    },
+    {
         id: 7,
         title: "LogPulse",
         description: "Personal Project",
