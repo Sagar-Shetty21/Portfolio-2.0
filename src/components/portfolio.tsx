@@ -61,9 +61,20 @@ const PortfolioSection = ({
         <motion.section
             id="portfolio"
             style={{ scale, rotate }}
-            className="bg-[#001242] sticky h-screen w-full pt-8 md:pt-28 pb-16 md:pb-0 flex flex-col items-center justify-center"
+            className="relative bg-gradient-to-br from-[#0a0f2e] via-[#001242] to-[#1a0f2e] sticky h-screen w-full pt-8 md:pt-28 pb-16 md:pb-0 flex flex-col items-center justify-center overflow-hidden"
         >
-            <div className="overflow-hidden py-8 md:px-[15%] w-full h-full">
+            {/* Animated Background Elements */}
+            <ModernBackground />
+
+            {/* Grid Pattern Overlay */}
+            <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_24px,rgba(255,255,255,0.05)_25px,rgba(255,255,255,0.05)_26px,transparent_27px,transparent_74px,rgba(255,255,255,0.05)_75px,rgba(255,255,255,0.05)_76px,transparent_77px),linear-gradient(rgba(255,255,255,0.05)_24px,transparent_25px,transparent_26px,rgba(255,255,255,0.05)_27px,rgba(255,255,255,0.05)_74px,transparent_75px,transparent_76px,rgba(255,255,255,0.05)_77px)] bg-[length:100px_100px]"></div>
+            </div>
+
+            {/* Floating Particles */}
+            <FloatingParticles />
+
+            <div className="relative z-10 overflow-hidden py-8 md:px-[15%] w-full h-full">
                 <motion.div
                     drag="x"
                     dragConstraints={{
@@ -92,6 +103,200 @@ const PortfolioSection = ({
 
 export default PortfolioSection;
 
+// Modern Background Component
+const ModernBackground = () => {
+    return (
+        <>
+            {/* Animated Gradient Orbs */}
+            <motion.div
+                className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full blur-3xl"
+                animate={{
+                    scale: [1, 1.2, 1],
+                    x: [0, 50, 0],
+                    y: [0, -30, 0],
+                }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+            <motion.div
+                className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
+                animate={{
+                    scale: [1, 1.3, 1],
+                    x: [0, -40, 0],
+                    y: [0, 20, 0],
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2,
+                }}
+            />
+            <motion.div
+                className="absolute top-3/4 left-1/3 w-64 h-64 bg-gradient-to-r from-indigo-500/25 to-pink-500/25 rounded-full blur-3xl"
+                animate={{
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 180, 360],
+                }}
+                transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: "linear",
+                }}
+            />
+
+            {/* Geometric Shapes */}
+            <motion.div
+                className="absolute top-10 right-10 w-4 h-4 bg-cyan-400/50 rotate-45"
+                animate={{
+                    rotate: [45, 405],
+                    scale: [1, 1.5, 1],
+                }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+            <motion.div
+                className="absolute bottom-20 left-20 w-6 h-6 border-2 border-purple-400/50 rounded-full"
+                animate={{
+                    scale: [1, 1.8, 1],
+                    opacity: [0.5, 1, 0.5],
+                }}
+                transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+            <motion.div
+                className="absolute top-1/2 right-1/3 w-3 h-3 bg-pink-400/60"
+                animate={{
+                    y: [0, -20, 0],
+                    x: [0, 15, 0],
+                    rotate: [0, 90, 0],
+                }}
+                transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+
+            {/* Animated Lines */}
+            <svg
+                className="absolute inset-0 w-full h-full opacity-30"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+            >
+                <motion.path
+                    d="M0,50 Q25,20 50,50 T100,50"
+                    stroke="url(#gradient1)"
+                    strokeWidth="0.2"
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                />
+                <motion.path
+                    d="M0,30 Q50,70 100,30"
+                    stroke="url(#gradient2)"
+                    strokeWidth="0.15"
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1,
+                    }}
+                />
+                <defs>
+                    <linearGradient
+                        id="gradient1"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                    >
+                        <stop offset="0%" stopColor="#06b6d4" stopOpacity="0" />
+                        <stop
+                            offset="50%"
+                            stopColor="#06b6d4"
+                            stopOpacity="1"
+                        />
+                        <stop
+                            offset="100%"
+                            stopColor="#06b6d4"
+                            stopOpacity="0"
+                        />
+                    </linearGradient>
+                    <linearGradient
+                        id="gradient2"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                    >
+                        <stop offset="0%" stopColor="#a855f7" stopOpacity="0" />
+                        <stop
+                            offset="50%"
+                            stopColor="#a855f7"
+                            stopOpacity="1"
+                        />
+                        <stop
+                            offset="100%"
+                            stopColor="#a855f7"
+                            stopOpacity="0"
+                        />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </>
+    );
+};
+
+// Floating Particles Component
+const FloatingParticles = () => {
+    const particles = Array.from({ length: 20 }, (_, i) => i);
+
+    return (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {particles.map((particle) => (
+                <motion.div
+                    key={particle}
+                    className="absolute w-1 h-1 bg-white/20 rounded-full"
+                    style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                    }}
+                    animate={{
+                        y: [0, -100, 0],
+                        x: [0, Math.random() * 50 - 25, 0],
+                        opacity: [0, 1, 0],
+                        scale: [0, 1, 0],
+                    }}
+                    transition={{
+                        duration: Math.random() * 6 + 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: Math.random() * 5,
+                    }}
+                />
+            ))}
+        </div>
+    );
+};
+
 const Projects = ({ imgIndex }: { imgIndex: number }) => {
     return (
         <>
@@ -103,23 +308,35 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                         animate={{
                             scale: imgIndex === idx ? 0.95 : 0.85,
                         }}
-                        className="w-full h-full bg-gray-950 bg-opacity-20 backdrop-blur-xl rounded-lg shrink-0 md:grid md:grid-cols-2 flex flex-col-reverse gap-0 md:gap-6 p-0 md:p-4"
+                        className="relative w-full h-full bg-gradient-to-br from-gray-900/40 to-gray-950/60 backdrop-blur-xl rounded-2xl border border-white/10 shrink-0 md:grid md:grid-cols-2 flex flex-col-reverse gap-0 md:gap-6 p-0 md:p-4 shadow-2xl shadow-black/50"
+                        style={{
+                            backgroundImage: `
+                                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+                                radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.05) 0%, transparent 50%)
+                            `,
+                        }}
                     >
-                        <div className="p-2 md:p-4 flex flex-col h-full overflow-y-auto">
-                            <div className="text-2xl md:text-[3.2rem] font-bold text-white">
+                        {/* Card Glow Effect */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 blur-xl opacity-50" />
+
+                        <div className="relative p-2 md:p-4 flex flex-col h-full overflow-y-auto">
+                            <div className="text-2xl md:text-[3.2rem] font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
                                 {project.title}
                             </div>
-                            <div className="text-sm md:text-lg font-semibold md:mt-4 text-white">
+                            <div className="text-sm md:text-lg font-semibold md:mt-4 text-gray-200">
                                 {project.description}
                             </div>
-                            <div className="flex-grow bg-[#001242] my-4 rounded-lg shadow-inner shadow-blue-950 p-3 md:p-6 font-mono text-sm md:text-lg flex flex-col overflow-y-auto">
+                            <div className="flex-grow bg-gradient-to-br from-[#001242] to-[#0a1630] my-4 rounded-lg shadow-inner shadow-blue-950/50 border border-blue-900/30 p-3 md:p-6 font-mono text-sm md:text-lg flex flex-col overflow-y-auto">
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-2 text-red-500">
-                                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
-                                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
-                                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
+                                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500 shadow-lg shadow-red-500/50"></div>
+                                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500 shadow-lg shadow-yellow-500/50"></div>
+                                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500 shadow-lg shadow-green-500/50"></div>
                                     </div>
-                                    <p className="text-xs md:text-sm">bash</p>
+                                    <p className="text-xs md:text-sm text-cyan-300">
+                                        bash
+                                    </p>
                                 </div>
                                 <div className="mt-4 overflow-y-auto flex-grow">
                                     {project.points.map((p, i) => (
@@ -135,20 +352,20 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col p-2 md:p-4">
+                        <div className="relative flex flex-col p-2 md:p-4">
                             <div className="relative group flex items-center justify-center">
                                 <img
                                     src={`/assets/${project.placeholderImage}`}
-                                    className="rounded-xl object-cover w-full md:h-[340px] h-[160px] transition-all duration-500 ease-in-out"
+                                    className="rounded-xl object-cover w-full md:h-[340px] h-[160px] transition-all duration-500 ease-in-out shadow-xl shadow-black/30 border border-white/10"
                                 />
                                 <a
                                     href={project.link}
                                     target="_blank"
-                                    className="absolute cursor-pointer inset-0 flex items-center justify-center text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/30 text-white"
+                                    className="absolute cursor-pointer inset-0 flex items-center justify-center text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-black/50 to-black/30 backdrop-blur-sm text-white rounded-xl"
                                 >
                                     Visit &#8599;
                                 </a>
-                                <span className="font-semibold px-3 text-white py-1 absolute top-2 right-2 bg-slate-800 text-sm md:text-lg rounded-lg">
+                                <span className="font-semibold px-3 text-white py-1 absolute top-2 right-2 bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-sm text-sm md:text-lg rounded-lg border border-white/20">
                                     {project.date}
                                 </span>
                             </div>
@@ -157,10 +374,14 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                     <button
                                         key={name}
                                         className="
-                                        px-2 md:px-6 py-1 md:py-3 text-sm md:text-lg rounded-md text-white bg-[#001242] cursor-pointer border border-[#2c2c2c] 
-                                        transition-all duration-300 shadow-[6px_6px_12px_#001a63,-6px_-6px_12px_#171717] 
-                                        hover:border-black 
-                                        active:shadow-[4px_4px_12px_#001a62,-4px_-4px_12px_#171717]
+                                        px-2 md:px-6 py-1 md:py-3 text-sm md:text-lg rounded-md text-white 
+                                        bg-gradient-to-r from-[#001242] to-[#0a1630] cursor-pointer 
+                                        border border-blue-500/30 backdrop-blur-sm
+                                        transition-all duration-300 
+                                        shadow-[0_4px_20px_rgba(59,130,246,0.15)] 
+                                        hover:border-blue-400/50 hover:shadow-[0_6px_25px_rgba(59,130,246,0.25)]
+                                        hover:scale-105 hover:bg-gradient-to-r hover:from-[#0a1630] hover:to-[#001242]
+                                        active:scale-95
                                     "
                                     >
                                         {name}
@@ -172,8 +393,10 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                     <div
                                         className="
                                             flex items-center justify-center px-2 md:px-4 py-2 gap-2 md:gap-4 
-                                            bg-[#4A4A4A] outline outline-[3px] outline-[#4A4A4A] outline-offset-[-3px] 
-                                            rounded-md border-none cursor-not-allowed transition-all duration-400 text-sm
+                                            bg-gradient-to-r from-[#4A4A4A] to-[#3A3A3A] 
+                                            border border-gray-500/30 backdrop-blur-sm
+                                            rounded-md cursor-not-allowed transition-all duration-400 text-sm
+                                            shadow-lg shadow-black/20
                                         "
                                     >
                                         <svg
@@ -231,8 +454,11 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                         target="_blank"
                                         className="
                                         flex items-center justify-center px-2 md:px-4 py-2 gap-2 md:gap-4 
-                                        bg-[#181717] outline outline-[3px] outline-[#181717] outline-offset-[-3px] 
-                                        rounded-md border-none cursor-pointer transition-all duration-400 text-sm hover:scale-110
+                                        bg-gradient-to-r from-[#181717] to-[#0d1117] 
+                                        border border-gray-600/30 backdrop-blur-sm
+                                        rounded-md cursor-pointer transition-all duration-400 text-sm 
+                                        hover:scale-110 hover:shadow-[0_8px_30px_rgba(255,255,255,0.1)]
+                                        hover:border-white/40 group
                                     "
                                     >
                                         <svg
@@ -241,6 +467,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                             viewBox="0 0 24 24"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
+                                            className="group-hover:scale-110 transition-transform duration-300"
                                         >
                                             <path
                                                 d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
@@ -269,16 +496,16 @@ const Dots = ({
     setImgIndex: React.Dispatch<React.SetStateAction<number>>;
 }) => {
     return (
-        <div className="md:mx-4 flex w-full justify-center gap-2">
+        <div className="relative z-20 md:mx-4 flex w-full justify-center gap-2">
             {PROJECTS_LIST.map((_, idx) => {
                 return (
                     <button
                         key={idx}
                         onClick={() => setImgIndex(idx)}
-                        className={`h-3 w-3 rounded-full transition-colors ${
+                        className={`h-3 w-3 rounded-full transition-all duration-300 ${
                             idx === imgIndex
-                                ? "bg-neutral-50"
-                                : "bg-neutral-500"
+                                ? "bg-gradient-to-r from-cyan-400 to-blue-400 shadow-lg shadow-cyan-400/50 scale-125"
+                                : "bg-neutral-500 hover:bg-neutral-300 hover:scale-110"
                         }`}
                     />
                 );
@@ -290,8 +517,8 @@ const Dots = ({
 const GradientEdges = () => {
     return (
         <>
-            <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" />
-            <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" />
+            <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-r from-[#0a0f2e]/80 to-transparent z-10" />
+            <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-l from-[#0a0f2e]/80 to-transparent z-10" />
         </>
     );
 };
