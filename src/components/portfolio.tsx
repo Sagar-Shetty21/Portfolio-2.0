@@ -61,7 +61,7 @@ const PortfolioSection = ({
         <motion.section
             id="portfolio"
             style={{ scale, rotate }}
-            className="relative bg-gradient-to-br from-[#0a0f2e] via-[#001242] to-[#1a0f2e] sticky h-screen w-full pt-8 md:pt-28 pb-16 md:pb-0 flex flex-col items-center justify-center overflow-hidden"
+            className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 h-screen w-full pt-8 md:pt-28 pb-16 md:pb-0 flex flex-col items-center justify-center overflow-hidden"
         >
             {/* Animated Background Elements */}
             <ModernBackground />
@@ -96,8 +96,8 @@ const PortfolioSection = ({
 
                 <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
                 <ArrowButtons imgIndex={imgIndex} setImgIndex={setImgIndex} />
-                <GradientEdges />
             </div>
+            <GradientEdges />
         </motion.section>
     );
 };
@@ -106,162 +106,157 @@ export default PortfolioSection;
 
 // Modern Background Component
 const ModernBackground = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     return (
         <>
-            {/* Animated Gradient Orbs */}
+            {/* Reduced Gradient Orbs - smaller blur, fewer orbs */}
             <motion.div
-                className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full blur-3xl"
-                animate={{
-                    scale: [1, 1.2, 1],
-                    x: [0, 50, 0],
-                    y: [0, -30, 0],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            />
-            <motion.div
-                className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
-                animate={{
-                    scale: [1, 1.3, 1],
-                    x: [0, -40, 0],
-                    y: [0, 20, 0],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 2,
-                }}
-            />
-            <motion.div
-                className="absolute top-3/4 left-1/3 w-64 h-64 bg-gradient-to-r from-indigo-500/25 to-pink-500/25 rounded-full blur-3xl"
+                className={`absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full ${
+                    isMobile ? "blur-xl" : "blur-3xl"
+                }`}
                 animate={{
                     scale: [1, 1.1, 1],
-                    rotate: [0, 180, 360],
-                }}
-                transition={{
-                    duration: 12,
-                    repeat: Infinity,
-                    ease: "linear",
-                }}
-            />
-
-            {/* Geometric Shapes */}
-            <motion.div
-                className="absolute top-10 right-10 w-4 h-4 bg-cyan-400/50 rotate-45"
-                animate={{
-                    rotate: [45, 405],
-                    scale: [1, 1.5, 1],
-                }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            />
-            <motion.div
-                className="absolute bottom-20 left-20 w-6 h-6 border-2 border-purple-400/50 rounded-full"
-                animate={{
-                    scale: [1, 1.8, 1],
-                    opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            />
-            <motion.div
-                className="absolute top-1/2 right-1/3 w-3 h-3 bg-pink-400/60"
-                animate={{
+                    x: [0, 30, 0],
                     y: [0, -20, 0],
-                    x: [0, 15, 0],
-                    rotate: [0, 90, 0],
                 }}
                 transition={{
-                    duration: 7,
+                    duration: isMobile ? 12 : 8, // Slower on mobile
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
             />
 
-            {/* Animated Lines */}
-            <svg
-                className="absolute inset-0 w-full h-full opacity-30"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-            >
-                <motion.path
-                    d="M0,50 Q25,20 50,50 T100,50"
-                    stroke="url(#gradient1)"
-                    strokeWidth="0.2"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                />
-                <motion.path
-                    d="M0,30 Q50,70 100,30"
-                    stroke="url(#gradient2)"
-                    strokeWidth="0.15"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1,
-                    }}
-                />
-                <defs>
-                    <linearGradient
-                        id="gradient1"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                    >
-                        <stop offset="0%" stopColor="#06b6d4" stopOpacity="0" />
-                        <stop
-                            offset="50%"
-                            stopColor="#06b6d4"
-                            stopOpacity="1"
-                        />
-                        <stop
-                            offset="100%"
-                            stopColor="#06b6d4"
-                            stopOpacity="0"
-                        />
-                    </linearGradient>
-                    <linearGradient
-                        id="gradient2"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                    >
-                        <stop offset="0%" stopColor="#a855f7" stopOpacity="0" />
-                        <stop
-                            offset="50%"
-                            stopColor="#a855f7"
-                            stopOpacity="1"
-                        />
-                        <stop
-                            offset="100%"
-                            stopColor="#a855f7"
-                            stopOpacity="0"
-                        />
-                    </linearGradient>
-                </defs>
-            </svg>
+            {!isMobile && (
+                <>
+                    <motion.div
+                        className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-2xl"
+                        animate={{
+                            scale: [1, 1.2, 1],
+                            x: [0, -30, 0],
+                            y: [0, 15, 0],
+                        }}
+                        transition={{
+                            duration: 10,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: 2,
+                        }}
+                    />
+
+                    {/* Remove rotating orb on mobile - expensive */}
+                    <motion.div
+                        className="absolute top-3/4 left-1/3 w-32 h-32 bg-gradient-to-r from-indigo-500/20 to-pink-500/20 rounded-full blur-xl"
+                        animate={{
+                            scale: [1, 1.05, 1],
+                        }}
+                        transition={{
+                            duration: 8,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                    />
+                </>
+            )}
+
+            {/* Simplified Geometric Shapes - only one on mobile */}
+            <motion.div
+                className="absolute top-10 right-10 w-3 h-3 bg-cyan-400/40 rotate-45"
+                animate={{
+                    rotate: [45, 135],
+                    scale: [1, 1.2, 1],
+                }}
+                transition={{
+                    duration: isMobile ? 8 : 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            />
+
+            {!isMobile && (
+                <>
+                    <motion.div
+                        className="absolute bottom-20 left-20 w-4 h-4 border border-purple-400/40 rounded-full"
+                        animate={{
+                            scale: [1, 1.5, 1],
+                            opacity: [0.4, 0.8, 0.4],
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                    />
+
+                    <motion.div
+                        className="absolute top-1/2 right-1/3 w-2 h-2 bg-pink-400/50"
+                        animate={{
+                            y: [0, -15, 0],
+                            x: [0, 10, 0],
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                    />
+                </>
+            )}
+
+            {/* Remove complex SVG animations on mobile */}
+            {!isMobile && (
+                <svg
+                    className="absolute inset-0 w-full h-full opacity-20"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="xMidYMid slice" // Better performance
+                >
+                    <motion.path
+                        d="M0,50 Q50,25 100,50"
+                        stroke="url(#gradient1)"
+                        strokeWidth="0.3"
+                        fill="none"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                    />
+                    <defs>
+                        <linearGradient
+                            id="gradient1"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                        >
+                            <stop
+                                offset="0%"
+                                stopColor="#06b6d4"
+                                stopOpacity="0"
+                            />
+                            <stop
+                                offset="50%"
+                                stopColor="#06b6d4"
+                                stopOpacity="0.6"
+                            />
+                            <stop
+                                offset="100%"
+                                stopColor="#06b6d4"
+                                stopOpacity="0"
+                            />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            )}
         </>
     );
 };
@@ -277,15 +272,25 @@ const FloatingParticles = () => {
             delay: number;
         }[]
     >([]);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const generatedParticles = Array.from({ length: 20 }, () => ({
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            xMove: Math.random() * 50 - 25,
-            duration: Math.random() * 6 + 4,
-            delay: Math.random() * 5,
-        }));
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+
+        // Reduce particles on mobile
+        const particleCount = window.innerWidth < 768 ? 6 : 15;
+
+        const generatedParticles = Array.from(
+            { length: particleCount },
+            (_, i) => ({
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                xMove: Math.random() * 30 - 15, // Reduce movement range
+                duration: Math.random() * 4 + 6, // Slower animations
+                delay: Math.random() * 8 + i * 0.2, // Stagger more
+            })
+        );
         setParticles(generatedParticles);
     }, []);
 
@@ -294,15 +299,17 @@ const FloatingParticles = () => {
             {particles.map((particle, i) => (
                 <motion.div
                     key={i}
-                    className="absolute w-1 h-1 bg-white/20 rounded-full"
+                    className={`absolute ${
+                        isMobile ? "w-0.5 h-0.5" : "w-1 h-1"
+                    } bg-white/15 rounded-full`}
                     style={{
                         left: particle.left,
                         top: particle.top,
                     }}
                     animate={{
-                        y: [0, -100, 0],
+                        y: [0, -60, 0],
                         x: [0, particle.xMove, 0],
-                        opacity: [0, 1, 0],
+                        opacity: [0, 0.8, 0],
                         scale: [0, 1, 0],
                     }}
                     transition={{
@@ -411,7 +418,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                         animate={{
                             scale: imgIndex === idx ? 0.95 : 0.85,
                         }}
-                        className="relative w-full h-full bg-gradient-to-br from-gray-900/40 to-gray-950/60 backdrop-blur-xl rounded-2xl border border-white/10 shrink-0 md:grid md:grid-cols-2 flex flex-col-reverse gap-0 md:gap-6 p-0 md:p-4 shadow-2xl shadow-black/50"
+                        className="relative w-full h-full bg-gradient-to-br from-gray-900/40 to-gray-950/60 backdrop-blur-xl rounded-2xl border border-white/10 shrink-0 md:grid md:grid-cols-2 flex flex-col gap-0 md:gap-6 p-0 md:p-4 shadow-2xl shadow-black/50"
                         style={{
                             backgroundImage: `
                                 radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
@@ -424,10 +431,10 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 blur-xl opacity-50" />
 
                         <div className="relative p-2 md:p-4 flex flex-col h-full overflow-y-auto">
-                            <div className="text-2xl md:text-[3.2rem] font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
+                            <div className="text-center md:text-left text-2xl md:text-[3.2rem] font-bold">
                                 {project.title}
                             </div>
-                            <div className="text-sm md:text-lg font-semibold md:mt-4 text-gray-200">
+                            <div className="text-center md:text-left text-sm md:text-lg font-semibold md:mt-4 text-gray-200">
                                 {project.description}
                             </div>
                             <div className="flex-grow bg-gradient-to-br from-[#001242] to-[#0a1630] my-4 rounded-lg shadow-inner shadow-blue-950/50 border border-blue-900/30 p-3 md:p-6 font-mono text-sm md:text-lg flex flex-col overflow-y-auto">
@@ -455,7 +462,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex flex-col p-2 md:p-4">
+                        <div className="relative flex flex-col-reverse md:flex-col p-2 md:p-4">
                             <div className="relative group flex items-center justify-center">
                                 <img
                                     src={`/assets/${project.placeholderImage}`}
@@ -472,7 +479,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                     {project.date}
                                 </span>
                             </div>
-                            <div className="flex items-center gap-4 py-6 flex-wrap">
+                            <div className="flex items-center gap-2 md:gap-4 py-4 md:py-6 flex-wrap">
                                 {project.techStack.map((name) => (
                                     <button
                                         key={name}
@@ -492,7 +499,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                 ))}
                             </div>
                             {project.source === "private" ? (
-                                <div className="flex-grow flex items-end justify-center md:justify-end p-2">
+                                <div className="flex-grow flex items-end justify-center md:justify-end md:p-2">
                                     <div
                                         className="
                                             flex items-center justify-center px-2 md:px-4 py-2 gap-2 md:gap-4 
@@ -551,7 +558,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                     </div>
                                 </div>
                             ) : (
-                                <div className="flex-grow flex items-end justify-center md:justify-end p-2">
+                                <div className="flex-grow flex items-end justify-center md:justify-end md:p-2">
                                     <a
                                         href={project.source}
                                         target="_blank"
