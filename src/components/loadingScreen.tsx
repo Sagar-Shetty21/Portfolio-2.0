@@ -3,8 +3,8 @@ const LoadingScreen = () => {
         <div className="fixed inset-0 bg-[#0a192f] flex items-center justify-center z-[99999] overflow-hidden">
             {/* Subtle background elements */}
             <div className="absolute inset-0">
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#f13c58]/5 rounded-full blur-2xl animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[#f13c58]/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#f13c58]/5 rounded-full blur-md md:blur-2xl animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[#f13c58]/5 rounded-full blur-lg md:blur-3xl animate-pulse delay-1000"></div>
             </div>
 
             {/* Grid pattern */}

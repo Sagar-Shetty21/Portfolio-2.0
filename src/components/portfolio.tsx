@@ -120,7 +120,7 @@ const ModernBackground = () => {
             {/* Reduced Gradient Orbs - smaller blur, fewer orbs */}
             <motion.div
                 className={`absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full ${
-                    isMobile ? "blur-xl" : "blur-3xl"
+                    isMobile ? "blur-sm" : "blur-3xl"
                 }`}
                 animate={{
                     scale: [1, 1.1, 1],
@@ -418,7 +418,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                         animate={{
                             scale: imgIndex === idx ? 0.95 : 0.85,
                         }}
-                        className="relative w-full h-full bg-gradient-to-br from-gray-900/40 to-gray-950/60 backdrop-blur-xl rounded-2xl border border-white/10 shrink-0 md:grid md:grid-cols-2 flex flex-col gap-0 md:gap-6 p-0 md:p-4 shadow-2xl shadow-black/50"
+                        className="relative w-full h-full bg-gradient-to-br from-gray-900/40 to-gray-950/60 md:backdrop-blur-xl rounded-2xl border border-white/10 shrink-0 md:grid md:grid-cols-2 flex flex-col gap-0 md:gap-6 p-0 md:p-4 shadow-2xl shadow-black/50"
                         style={{
                             backgroundImage: `
                                 radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
@@ -428,7 +428,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                         }}
                     >
                         {/* Card Glow Effect */}
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 blur-xl opacity-50" />
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 blur-sm md:blur-xl opacity-50" />
 
                         <div className="relative p-2 md:p-4 flex flex-col h-full overflow-y-auto">
                             <div className="text-center md:text-left text-2xl md:text-[3.2rem] font-bold">
@@ -471,7 +471,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                                 <a
                                     href={project.link}
                                     target="_blank"
-                                    className="absolute cursor-pointer inset-0 flex items-center justify-center text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-black/50 to-black/30 backdrop-blur-sm text-white rounded-xl"
+                                    className={`absolute cursor-pointer inset-0 flex items-center justify-center text-lg font-semibold md:opacity-0 opacity-80 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-black/50 to-black/30 md:backdrop-blur-sm text-white rounded-xl`}
                                 >
                                     Visit &#8599;
                                 </a>

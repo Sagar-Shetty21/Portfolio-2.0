@@ -41,9 +41,9 @@ const HomeSection = ({
         >
             {/* Simplified Background Elements - Reduced blur and complexity */}
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-red-500/10 rounded-full blur-2xl"></div>
-                <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-blue-600/8 rounded-full blur-2xl"></div>
-                <div className="absolute top-1/4 left-1/2 w-80 h-80 bg-purple-500/6 rounded-full blur-xl"></div>
+                <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-red-500/10 rounded-full blur-lg md:blur-2xl"></div>
+                <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-blue-600/8 rounded-full blur-lg md:blur-2xl"></div>
+                <div className="absolute top-1/4 left-1/2 w-80 h-80 bg-purple-500/6 rounded-full blur-md md:blur-xl"></div>
             </div>
 
             {/* Simplified diagonal pattern */}
