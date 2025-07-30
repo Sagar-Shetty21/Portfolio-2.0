@@ -203,7 +203,7 @@ export default function Home() {
             </a>
 
             {/* Header */}
-            <header className="px-6 md:px-[15%] py-4 md:py-8 flex items-center justify-between fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
+            <header className="px-6 md:px-[15%] py-4 md:py-8 flex items-center justify-between fixed top-0 left-0 right-0 z-50 md:backdrop-blur-sm">
                 <div className="font-bold text-xl md:text-2xl">
                     <span>{"<"}</span>
                     <span className="text-[#f13c58]">{"Sagar"}</span>
