@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTransform, motion, MotionValue } from "framer-motion";
 
 const HomeSection = ({
@@ -8,6 +8,20 @@ const HomeSection = ({
 }) => {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
     const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
+
+    const [dots, setDots] = useState<
+        { left: string; top: string; duration: number; delay: number }[]
+    >([]);
+
+    useEffect(() => {
+        const newDots = Array.from({ length: 20 }, () => ({
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            duration: 3 + Math.random() * 2,
+            delay: Math.random() * 2,
+        }));
+        setDots(newDots);
+    }, []);
 
     return (
         <motion.section
@@ -28,22 +42,22 @@ const HomeSection = ({
 
             {/* Floating particles */}
             <div className="absolute inset-0">
-                {[...Array(20)].map((_, i) => (
+                {dots.map((dot, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
+                            left: dot.left,
+                            top: dot.top,
                         }}
                         animate={{
                             y: [-20, 20, -20],
                             opacity: [0.3, 0.8, 0.3],
                         }}
                         transition={{
-                            duration: 3 + Math.random() * 2,
+                            duration: dot.duration,
                             repeat: Infinity,
-                            delay: Math.random() * 2,
+                            delay: dot.delay,
                         }}
                     />
                 ))}
@@ -125,7 +139,7 @@ const HomeSection = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2"
+                className="absolute bottom-20 sm:bottom-8 left-1/2 -translate-x-1/2"
             >
                 <motion.div
                     animate={{ y: [0, 8, 0] }}

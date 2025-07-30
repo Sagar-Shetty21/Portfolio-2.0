@@ -62,7 +62,7 @@ const AboutSection = ({
                             >
                                 <div className="w-12 h-px bg-gradient-to-r from-cyan-400 to-blue-500"></div>
                                 <span className="text-cyan-400 font-mono text-sm tracking-wider">
-                                    ABOUT
+                                    ABOUT ME
                                 </span>
                             </motion.div>
 
@@ -168,17 +168,22 @@ const AboutSection = ({
                                 {
                                     icon: "🐙",
                                     label: "GitHub",
-                                    href: "https://github.com/yourusername",
+                                    href: "https://github.com/Sagar-Shetty21",
                                 },
                                 {
                                     icon: "💼",
                                     label: "LinkedIn",
-                                    href: "https://linkedin.com/in/yourusername",
+                                    href: "https://linkedin.com/in/sagarshetty21",
                                 },
                                 {
                                     icon: "📧",
                                     label: "Email",
-                                    href: "mailto:your.email@example.com",
+                                    href: "mailto:dev.sagarshetty@example.com",
+                                },
+                                {
+                                    icon: "📝",
+                                    label: "Blog",
+                                    href: "https://mynotes-sagar.vercel.app/",
                                 },
                             ].map((social, index) => (
                                 <motion.a
@@ -289,7 +294,7 @@ const AboutSection = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2"
+                className="absolute bottom-20 sm:bottom-8 left-1/2 -translate-x-1/2"
             >
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
