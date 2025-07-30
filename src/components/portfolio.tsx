@@ -95,6 +95,7 @@ const PortfolioSection = ({
                 </motion.div>
 
                 <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
+                <ArrowButtons imgIndex={imgIndex} setImgIndex={setImgIndex} />
                 <GradientEdges />
             </div>
         </motion.section>
@@ -267,33 +268,135 @@ const ModernBackground = () => {
 
 // Floating Particles Component
 const FloatingParticles = () => {
-    const particles = Array.from({ length: 20 }, (_, i) => i);
+    const [particles, setParticles] = useState<
+        {
+            left: string;
+            top: string;
+            xMove: number;
+            duration: number;
+            delay: number;
+        }[]
+    >([]);
+
+    useEffect(() => {
+        const generatedParticles = Array.from({ length: 20 }, () => ({
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            xMove: Math.random() * 50 - 25,
+            duration: Math.random() * 6 + 4,
+            delay: Math.random() * 5,
+        }));
+        setParticles(generatedParticles);
+    }, []);
 
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {particles.map((particle) => (
+            {particles.map((particle, i) => (
                 <motion.div
-                    key={particle}
+                    key={i}
                     className="absolute w-1 h-1 bg-white/20 rounded-full"
                     style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
+                        left: particle.left,
+                        top: particle.top,
                     }}
                     animate={{
                         y: [0, -100, 0],
-                        x: [0, Math.random() * 50 - 25, 0],
+                        x: [0, particle.xMove, 0],
                         opacity: [0, 1, 0],
                         scale: [0, 1, 0],
                     }}
                     transition={{
-                        duration: Math.random() * 6 + 4,
+                        duration: particle.duration,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        delay: Math.random() * 5,
+                        delay: particle.delay,
                     }}
                 />
             ))}
         </div>
+    );
+};
+
+const ArrowButtons = ({
+    setImgIndex,
+}: {
+    imgIndex: number;
+    setImgIndex: React.Dispatch<React.SetStateAction<number>>;
+}) => {
+    const goToPrevious = () => {
+        setImgIndex((prev) =>
+            prev === 0 ? PROJECTS_LIST.length - 1 : prev - 1
+        );
+    };
+
+    const goToNext = () => {
+        setImgIndex((prev) =>
+            prev === PROJECTS_LIST.length - 1 ? 0 : prev + 1
+        );
+    };
+
+    return (
+        <>
+            {/* Left Arrow */}
+            <div className="absolute left-0 md:left-[15%] top-1/2 -translate-y-1/2 -translate-x-1/2 z-20">
+                <motion.button
+                    onClick={goToPrevious}
+                    className="group"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0.7 }}
+                    whileInView={{ opacity: 1 }}
+                >
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:border-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="text-white group-hover:text-cyan-400 transition-colors duration-300"
+                        >
+                            <path
+                                d="M15 18L9 12L15 6"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </div>
+                </motion.button>
+            </div>
+
+            {/* Right Arrow */}
+            <div className="absolute right-0 md:right-[15%] top-1/2 -translate-y-1/2 translate-x-1/2 z-20">
+                <motion.button
+                    onClick={goToNext}
+                    className="group"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0.7 }}
+                    whileInView={{ opacity: 1 }}
+                >
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:border-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="text-white group-hover:text-cyan-400 transition-colors duration-300"
+                        >
+                            <path
+                                d="M9 18L15 12L9 6"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </div>
+                </motion.button>
+            </div>
+        </>
     );
 };
 
@@ -502,7 +605,7 @@ const Dots = ({
                     <button
                         key={idx}
                         onClick={() => setImgIndex(idx)}
-                        className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                        className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full transition-all duration-300 ${
                             idx === imgIndex
                                 ? "bg-gradient-to-r from-cyan-400 to-blue-400 shadow-lg shadow-cyan-400/50 scale-125"
                                 : "bg-neutral-500 hover:bg-neutral-300 hover:scale-110"
@@ -517,8 +620,8 @@ const Dots = ({
 const GradientEdges = () => {
     return (
         <>
-            <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-r from-[#0a0f2e]/80 to-transparent z-10" />
-            <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-l from-[#0a0f2e]/80 to-transparent z-10" />
+            <div className="hidden sm:block pointer-events-none absolute bottom-0 left-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-r from-[#0a0f2e]/80 to-transparent z-10" />
+            <div className="hidden sm:block pointer-events-none absolute bottom-0 right-0 top-0 w-[15vw] max-w-[160px] bg-gradient-to-l from-[#0a0f2e]/80 to-transparent z-10" />
         </>
     );
 };
