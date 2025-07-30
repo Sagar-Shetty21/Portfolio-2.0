@@ -31,7 +31,7 @@ const AboutSection = ({
         <motion.section
             id="about"
             style={{ scale, opacity }}
-            className="bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 sticky top-0 h-screen w-full overflow-hidden relative"
+            className="bg-gradient-to-br from-[#0a0f2e] via-[#001242] to-[#1a0f2e] sticky top-0 h-screen w-full overflow-hidden"
         >
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
@@ -112,7 +112,7 @@ const AboutSection = ({
                             transition={{ delay: 0.5 }}
                             className="space-y-4"
                         >
-                            <h3 className="text-xl font-semibold text-white mb-4">
+                            <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
                                 Tech Stack
                             </h3>
                             <div className="grid grid-cols-2 gap-3">
@@ -130,7 +130,7 @@ const AboutSection = ({
                                         onMouseLeave={() =>
                                             setHoveredSkill(null)
                                         }
-                                        className={`group flex items-center gap-3 p-3 rounded-lg border transition-all duration-300 cursor-pointer ${
+                                        className={`group flex items-center gap-3 p-2 md:p-3 rounded-lg border transition-all duration-300 cursor-pointer ${
                                             hoveredSkill === index
                                                 ? "border-cyan-400/50 bg-cyan-400/5 transform translate-x-2"
                                                 : "border-gray-700/50 bg-gray-800/20 hover:border-gray-600/50"
@@ -144,7 +144,7 @@ const AboutSection = ({
                                             }`}
                                         ></div>
                                         <span
-                                            className={`text-sm font-medium transition-colors duration-300 ${
+                                            className={`text-xs md:text-sm font-medium transition-colors duration-300 ${
                                                 hoveredSkill === index
                                                     ? "text-cyan-400"
                                                     : "text-gray-300"
@@ -162,7 +162,7 @@ const AboutSection = ({
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7 }}
-                            className="flex gap-4 pt-4"
+                            className="hidden md:flex gap-4 pt-4"
                         >
                             {[
                                 {
