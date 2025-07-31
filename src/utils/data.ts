@@ -1,5 +1,57 @@
 export const PROJECTS_LIST = [
     {
+        id: 9,
+        title: "MyNotes",
+        description: "Extended from Astro Paper",
+        techStack: ["Astro", "Supabase", "Tailwind CSS"],
+        date: "OnGoing",
+        link: "https://mynotes-sagar.vercel.app/",
+        source: "https://github.com/Sagar-Shetty21/My-Notes",
+        placeholderImage: "mynotes.png",
+        points: [
+            {
+                title: "Dynamic Blog Management",
+                subTitle:
+                    "Fetch and display articles from Supabase database with real-time content updates and seamless database integration.",
+            },
+            {
+                title: "Admin Authentication & Dashboard",
+                subTitle:
+                    "Secure login system using Supabase Auth with a comprehensive admin panel for content management and user control.",
+            },
+            {
+                title: "Live Preview Markdown Editor",
+                subTitle:
+                    "Real-time markdown editor with instant preview functionality, allowing writers to see formatted content as they type.",
+            },
+            {
+                title: "Responsive Design & Performance",
+                subTitle:
+                    "Built on Astro Paper theme with Tailwind CSS, delivering fast static site generation and mobile-optimized responsive design.",
+            },
+            {
+                title: "Content Organization System",
+                subTitle:
+                    "Comprehensive tagging system, featured posts highlighting, draft mode for work-in-progress, and categorized content management.",
+            },
+            {
+                title: "SEO & Social Media Optimization",
+                subTitle:
+                    "Built-in OG image generation, RSS feed support, sitemap creation, and customizable meta tags for better search visibility.",
+            },
+            {
+                title: "Row Level Security",
+                subTitle:
+                    "Advanced database security with RLS policies ensuring authenticated users can manage content while public users access published posts only.",
+            },
+            {
+                title: "Docker Deployment Ready",
+                subTitle:
+                    "Includes Docker configuration and environment setup for easy deployment across different platforms and hosting services.",
+            },
+        ],
+    },
+    {
         id: 8,
         title: "RivalTrack",
         description: "Personal Project",
