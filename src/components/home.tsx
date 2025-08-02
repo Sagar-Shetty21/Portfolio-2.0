@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTransform, motion, MotionValue } from "framer-motion";
+import Image from "next/image";
 
 const HomeSection = ({
     scrollYProgress,
@@ -37,10 +38,10 @@ const HomeSection = ({
         <motion.section
             id="home"
             style={{ scale, rotate }}
-            className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 sticky top-0 flex flex-col-reverse justify-center gap-10 md:gap-0 md:grid md:grid-cols-2 h-screen md:px-[15%] pt-10 overflow-hidden"
+            className="transform-gpu bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 sticky top-0 flex flex-col-reverse justify-center gap-10 md:gap-0 md:grid md:grid-cols-2 h-screen md:px-[15%] pt-10 overflow-hidden"
         >
             {/* Simplified Background Elements - Reduced blur and complexity */}
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute opacity-40 md:opacity-100 inset-0 overflow-hidden">
                 <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-red-500/10 rounded-full blur-lg md:blur-2xl"></div>
                 <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-blue-600/8 rounded-full blur-lg md:blur-2xl"></div>
                 <div className="absolute top-1/4 left-1/2 w-80 h-80 bg-purple-500/6 rounded-full blur-md md:blur-xl"></div>
@@ -164,12 +165,13 @@ const HomeSection = ({
                         strokeWidth="0"
                     />
                 </svg>
-                <img
+                <Image
                     alt="person illustration"
                     src="/assets/person-illustration.png"
+                    width={500}
+                    height={500}
+                    priority
                     className="w-auto h-64 md:h-auto md:w-[80%] object-cover opacity-90"
-                    loading="eager" // Ensure hero image loads immediately
-                    decoding="async"
                 />
             </motion.div>
 

@@ -6,6 +6,7 @@ import HomeSection from "@/components/home";
 import AboutSection from "@/components/about";
 import PortfolioSection from "@/components/portfolio";
 import LoadingScreen from "@/components/loadingScreen";
+import Image from "next/image";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -166,7 +167,10 @@ export default function Home() {
     );
 
     return (
-        <div ref={container} className="h-[300vh] relative">
+        <div
+            ref={container}
+            className="h-[300vh] relative text-slate-200 overflow-x-clip"
+        >
             {isLoading && <LoadingScreen />}
             {/* Social Links Sidebar - Desktop */}
             <div className="hidden fixed left-16 bottom-0 md:flex flex-col gap-6 items-center z-50">
@@ -178,10 +182,12 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="transform transition-transform duration-200 hover:scale-125"
                     >
-                        <img
+                        <Image
                             alt={link.alt}
                             src={link.src}
                             className="h-8 w-8"
+                            width={32}
+                            height={32}
                             loading="lazy"
                         />
                     </a>
@@ -263,7 +269,7 @@ export default function Home() {
                     isFullScreen ? "Exit fullscreen" : "Enter fullscreen"
                 }
             >
-                <img
+                <Image
                     src={
                         isFullScreen
                             ? "/assets/expand.png"
@@ -272,6 +278,8 @@ export default function Home() {
                     className="h-5 w-5 invert-[50%]"
                     alt=""
                     loading="lazy"
+                    height={52}
+                    width={52}
                 />
             </button>
 

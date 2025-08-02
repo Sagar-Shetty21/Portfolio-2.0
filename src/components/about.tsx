@@ -25,13 +25,18 @@ const AboutSection = ({
         [0, 0.2, 0.8, 1],
         [0.8, 1, 1, 0.8]
     );
+    const rotate = useTransform(
+        scrollYProgress,
+        [0, 0.1, 0.5, 1],
+        [0, -5, 0, 5]
+    );
     const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
 
     return (
         <motion.section
             id="about"
-            style={{ scale, opacity }}
-            className="bg-gradient-to-br from-[#0a0f2e] via-[#001242] to-[#1a0f2e] sticky top-0 h-screen w-full overflow-hidden"
+            style={{ scale, opacity, rotate }}
+            className="transform-gpu bg-gradient-to-br from-[#0a0f2e] via-[#001242] to-[#1a0f2e] sticky top-0 h-screen w-full overflow-hidden"
         >
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">

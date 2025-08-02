@@ -24,6 +24,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.transform-gpu {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
 /* MOBILE NAVBAR */
 
 .mobileNavbarSection {
