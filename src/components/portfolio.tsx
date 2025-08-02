@@ -6,6 +6,7 @@ import {
     useMotionValue,
 } from "framer-motion";
 import { PROJECTS_LIST } from "@/utils/data";
+import Image from "next/image";
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 1000;
@@ -61,7 +62,7 @@ const PortfolioSection = ({
         <motion.section
             id="portfolio"
             style={{ scale, rotate }}
-            className="relative bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 h-screen w-full pt-8 md:pt-28 pb-16 md:pb-0 flex flex-col items-center justify-center overflow-hidden"
+            className="relative transform-gpu bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 h-screen w-full pt-8 md:pt-28 pb-16 md:pb-0 flex flex-col items-center justify-center overflow-hidden"
         >
             {/* Animated Background Elements */}
             <ModernBackground />
@@ -74,7 +75,7 @@ const PortfolioSection = ({
             {/* Floating Particles */}
             <FloatingParticles />
 
-            <div className="relative z-10 overflow-hidden py-8 md:px-[15%] w-full h-full">
+            <div className="relative z-10 overflow-hidden py-8 md:px-[15%] w-full h-full transform-gpu">
                 <motion.div
                     drag="x"
                     dragConstraints={{
@@ -418,7 +419,7 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                         animate={{
                             scale: imgIndex === idx ? 0.95 : 0.85,
                         }}
-                        className="relative w-full h-full bg-gradient-to-br from-gray-900/40 to-gray-950/60 md:backdrop-blur-xl rounded-2xl border border-white/10 shrink-0 md:grid md:grid-cols-2 flex flex-col gap-0 md:gap-6 p-0 md:p-4 shadow-2xl shadow-black/50"
+                        className="transform-gpu relative w-full h-full bg-gradient-to-br from-gray-900/40 to-gray-950/60 md:backdrop-blur-xl rounded-2xl border border-white/10 shrink-0 md:grid md:grid-cols-2 flex flex-col gap-0 md:gap-6 p-0 md:p-4 shadow-2xl shadow-black/50"
                         style={{
                             backgroundImage: `
                                 radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
@@ -464,7 +465,10 @@ const Projects = ({ imgIndex }: { imgIndex: number }) => {
                         </div>
                         <div className="relative flex flex-col-reverse md:flex-col p-2 md:p-4">
                             <div className="relative group flex items-center justify-center">
-                                <img
+                                <Image
+                                    alt={`${project.title} banner`}
+                                    width={700}
+                                    height={500}
                                     src={`/assets/${project.placeholderImage}`}
                                     className="rounded-xl object-cover w-full md:h-[340px] h-[160px] transition-all duration-500 ease-in-out shadow-xl shadow-black/30 border border-white/10"
                                 />
