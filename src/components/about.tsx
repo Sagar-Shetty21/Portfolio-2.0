@@ -101,7 +101,7 @@ const AboutSection = ({
                             <p className="text-gray-400 leading-relaxed">
                                 With{" "}
                                 <span className="text-white font-semibold">
-                                    15+ months
+                                    2+ years
                                 </span>{" "}
                                 of professional experience, I specialize in
                                 creating beautiful, responsive, and
@@ -218,9 +218,9 @@ const AboutSection = ({
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="relative hidden lg:block"
                     >
-                        <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-6 h-full max-h-[600px] overflow-hidden">
+                        <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-6 h-full max-h-[600px] overflow-hidden flex flex-col">
                             {/* Header */}
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-3 mb-6 flex-shrink-0">
                                 <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
                                     <span className="text-white text-sm font-bold">
                                         🚀
@@ -232,7 +232,7 @@ const AboutSection = ({
                             </div>
 
                             {/* Timeline */}
-                            <div className="relative h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800/50 pr-2">
+                            <div className="relative flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800/50 pr-2">
                                 <div className="absolute left-8 top-0 w-px h-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600"></div>
 
                                 <div className="space-y-6 pb-8">

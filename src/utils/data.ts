@@ -481,9 +481,25 @@ export const PROJECTS_LIST = [
 
 export const EXPERIENCE_LIST = [
     {
+        role: "Software Engineer",
+        company: "Tricon Infotech",
+        time: "Sept 2025 - Present",
+        description: [
+            "SIMnet (McGraw Hill) — Education platform enabling instructors to manage students, courses, assignments, marks, and generate reports.",
+            "Built and modernized the platform using React Router 7, re-architecting a legacy system for a US-based education client.",
+            "Implemented accessibility (a11y) standards for WCAG compliance.",
+            "Wrote E2E test suites using Playwright.",
+            "Leveraged GitHub Copilot to accelerate development workflows.",
+            "E-commerce Platform (Informa) — Multi-tenant e-commerce solution for selling passes across tenants.",
+            "Worked in a monorepo architecture (React frontend, Node.js BFF, admin panel) integrated with commercetools, Stripe, and Salesforce Order Management.",
+            "Drove NFR (Non-Functional Requirements) initiatives: CI pipeline integration, Lighthouse CI (LHCI) performance scans, and axe-core accessibility audits.",
+            "Configured and maintained self-hosted GitHub Actions runners on EC2.",
+        ],
+    },
+    {
         role: "Software Developer",
         company: "SpArts Technologies",
-        time: "2023 - Present",
+        time: "Dec 2023 - Feb 2025",
         description: [
             "Developed and maintained academy management PWA (React) and student tracking app (React + Native Android with Capacitor), delivering solutions for academy operations and student progress tracking.",
             "Key Features: Implemented a live AI attendance system using Computer Vision and Face API for accurate, real-time attendance tracking. Integrated virtual meeting capabilities using Jitsi Meet for seamless remote interactions. Designed and deployed timely report generation using Cron tasks, ensuring academies receive insights regularly.",
